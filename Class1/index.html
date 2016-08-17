@@ -33,6 +33,14 @@
         <span class="ng-show">Esta etiqueta se muestra</span>
     </div>
 
-    <button id="clickHide" ng-click="apagaEtiqueta()">Apagar etiqueta</button>
+    <button id="clickHide" ng-click="apagaEtiqueta()" ng-disabled="false">Apagar etiqueta</button>
+
+    <!--<div><a href="{{url}}" title="Google">Ir a google</a></div>-->
+    <div><a ng-href="{{google_ruta}}" title="Google">Ir a google2</a></div>
+
+    <span>{{google_ruta}}</span>
+
+    <!--<div><img src="{{imagen}}" alt="Perrito" /></div>-->
+    <div><img ng-src="{{imagen}}" alt="Perrito" /></div>
 </body>
 </html>

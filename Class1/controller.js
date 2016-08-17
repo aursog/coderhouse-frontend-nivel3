@@ -17,4 +17,7 @@ app.controller("ControladorUno", function($scope) {
             elem.className = "ng-hide";
         }
     }
+
+    $scope.google_ruta = "http://www.google.cl/";
+    $scope.imagen = "perrito.jpg";
 });
