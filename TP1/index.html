@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primer CV con AngularJS</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body ng-app="mycv">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" id="cabeceraPersonal" ng-controller="DatosPersonales">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img ng-src="img/perrito.jpg" alt="Foto" id="fotoCv"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 id="nombre-persona">{{persona.nombre}}</h3>
+                        <div class="ng-hide" id="nombre-persona-input">
+                            <input type="text" name="nombre-persona-input" ng-model="persona.nombre" />
+                        </div>
+                        <h4 id="titulo-persona">{{persona.titulo + " - " + persona.casa_estudio + ", " + persona.pais}}</h4>
+                        <div class="ng-hide" id="titulo-persona-input">
+                            <input type="text" name="titulo-persona" ng-model="persona.titulo" />
+                            <input type="text" name="casa-estudio" ng-model="persona.casa_estudio" />
+                            <input type="text" name="persona-pais" ng-model="persona.pais" />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <button type="button" id="editButton" name="edit" ng-click="openEditInput()" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-edit"></i> Editar
+                        </button>
+
+                        <button type="button" id="saveButton" name="save" ng-click="saveChanges()" class="btn btn-success ng-hide">
+                            <i class="glyphicon glyphicon-save"></i> Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="lib/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+    <!-- Script propios para actividad -->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
