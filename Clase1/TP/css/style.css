@@ -1,0 +1,15 @@
+#fotoCv {
+    width: 60%;
+}
+
+#tableLaburos {
+    text-align: center;
+}
+
+#tableLaburos div, #datosLaboresCaja div {
+    border: 1px solid black;
+}
+
+#tableLaburos .emptySpace {
+    border: 0px;
+}

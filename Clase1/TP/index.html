@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
-<body ng-app="mycv">
-    <div class="container">
+<body>
+    <div class="container"  ng-app="mycv">
         <div class="row">
             <div class="col-lg-12" id="cabeceraPersonal" ng-controller="DatosPersonales">
                 <div class="row">
@@ -43,9 +43,28 @@
             </div>
 
             <div class="col-lg-12" id="Laboral" ng-controller="DatosLaborales">
-                <h3>Datos laborales</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Datos laborales</h3>
+                    </div>
 
-                <div id="datosLaboresCaja" ng-repeat="laburo in laburos">
+                    <!-- Editar nuestro registro de trabajos -->
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-danger" ng-click="openCloseFormLaburo()">
+                            <i class="glyphicon glyphicon-edit"></i> Editar
+                        </button>
+                    </div>
+                </div>
+
+                <div id="tableLaburos">
+                    <div class="row">
+                        <div class="col-md-3">A&ntilde;o</div>
+                        <div class="col-md-1 emptySpace"></div>
+                        <div class="col-md-4">Cargo</div>
+                        <div class="col-md-4">Empresa</div>
+                    </div>
+                </div>
+                <div id="datosLaboresCaja" ng-repeat="laburo in laburos" ng-animate="'animate'">
                     <div class="row">
                         <div class="col-md-3" class="anio">{{laburo.anio}}</div>
                         <div class="col-md-1">&nbsp;</div>
@@ -54,7 +73,8 @@
                     </div>
                 </div>
 
-                <div id="formularioLaburos" class="col-lg-4">
+                <!-- Formulario de trabajos -->
+                <div id="formularioLaburos" class="col-lg-4" ng-hide="hideForm">
                     <h5>Formulario de trabajos</h5>
                     <div class="row">
                         <div class="col-md-3">Año</div>
@@ -80,8 +100,15 @@
     <script type="text/javascript" src="lib/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 
     <!-- Script propios para actividad -->
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        app.controller("TercerController", function($scope, $log){
+
+        });
+    </script>
 </body>
 </html>

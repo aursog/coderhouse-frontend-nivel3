@@ -2,15 +2,22 @@
  * Created by aurso on 8/17/16.
  */
 
-var app = angular.module("mycv", []);
+/**
+ * Controlador para Datos Personales
+ */
 
-app.controller("DatosPersonales", function($scope){
+app.controller("DatosPersonales", function($scope, $log){
     var persona = {
         nombre: "Anggelo Urso G.",
         titulo: "Ingeniero Ejecución Informática",
         casa_estudio: "UTFSM",
         pais: "Chile"
     };
+
+    /*$log.debug("Hola curso de Frontend");
+    $log.info("Esta es una información");
+    $log.warn("Esta es una advertencia");
+    $log.error("Esto es un error");*/
 
     $scope.persona = persona;
 
@@ -24,7 +31,7 @@ app.controller("DatosPersonales", function($scope){
         $('#nombre-persona-input').removeClass("ng-hide");
         $('#titulo-persona-input').removeClass("ng-hide");
         $('#saveButton').removeClass("ng-hide");
-    }
+    };
 
     $scope.saveChanges = function() {
         // Primero escondemos inputs
@@ -36,16 +43,24 @@ app.controller("DatosPersonales", function($scope){
         $('#nombre-persona-input').addClass("ng-hide");
         $('#titulo-persona-input').addClass("ng-hide");
         $('#saveButton').addClass("ng-hide");
-    }
+    };
 });
 
+/**
+ * Controlador para Datos Laborales
+ */
 app.controller("DatosLaborales", function($scope){
-    var laburos = [];
+    $scope.laburos = [];
+    $scope.hideForm = true;
+
+    $scope.openCloseFormLaburo = function() {
+        $scope.hideForm = !$scope.hideForm;
+    };
 
     $scope.saveLaburo = function() {
-        laburos.push($scope.new_laburo);
+        $scope.laburos.push($scope.new_laburo);
+        // Nos limpia la variable del scope new_laburo
+        $scope.new_laburo = {};
     }
-
-    $scope.laburos = laburos;
 });
 
