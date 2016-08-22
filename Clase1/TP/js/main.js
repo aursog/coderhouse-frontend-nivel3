@@ -50,7 +50,10 @@ app.controller("DatosPersonales", function($scope, $log){
  * Controlador para Datos Laborales
  */
 app.controller("DatosLaborales", function($scope, $log){
-    $scope.laburos = [];
+    $scope.laburos = [
+        {anio: 2011, cargo: 'ingeniero', empresa: 'Napsis'},
+        {anio: 2009, cargo: 'contador', empresa: 'Banco'}
+    ];
     $scope.hideForm = true;
 
     $scope.openCloseFormLaburo = function() {
@@ -64,8 +67,8 @@ app.controller("DatosLaborales", function($scope, $log){
     }
 
     $scope.deleteLaburo = function(index) {
-        $scope.laburos[index] = {};
-        $('.del-button').eq(0).addClass('ng-hide');
+        $log.debug($scope.laburos[index]);
+        //$scope.laburos[index] = {};
     }
 });
 
