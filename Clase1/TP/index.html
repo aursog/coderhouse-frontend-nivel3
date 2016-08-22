@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 
 <body>
@@ -61,15 +62,21 @@
                         <div class="col-md-3">A&ntilde;o</div>
                         <div class="col-md-1 emptySpace"></div>
                         <div class="col-md-4">Cargo</div>
-                        <div class="col-md-4">Empresa</div>
+                        <div class="col-md-3">Empresa</div>
+                        <div class="col-md-1">Acciones</div>
                     </div>
                 </div>
-                <div id="datosLaboresCaja" ng-repeat="laburo in laburos" ng-animate="'animate'">
+                <div id="datosLaboresCaja" ng-repeat="(key, laburo) in laburos" ng-animate="'animate'">
                     <div class="row">
                         <div class="col-md-3" class="anio">{{laburo.anio}}</div>
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-4" class="cargo">{{laburo.cargo}}</div>
-                        <div class="col-md-4" class="empresa">{{laburo.empresa}}</div>
+                        <div class="col-md-3" class="empresa">{{laburo.empresa}}</div>
+                        <div class="col-md-1" class="action">
+                            <button type="button" class="btn btn-small del-button" ng-click="deleteLaburo(key)">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -106,8 +113,22 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
-        app.controller("TercerController", function($scope, $log){
+        $(function() {
+            $('.level-bar-inner').css('width', '0');
 
+            $(window).on('load', function () {
+
+                $('.level-bar-inner').each(function () {
+
+                    var itemWidth = $(this).data('level');
+
+                    $(this).animate({
+                        width: itemWidth
+                    }, 800);
+
+                });
+
+            });
         });
     </script>
 </body>

@@ -49,7 +49,7 @@ app.controller("DatosPersonales", function($scope, $log){
 /**
  * Controlador para Datos Laborales
  */
-app.controller("DatosLaborales", function($scope){
+app.controller("DatosLaborales", function($scope, $log){
     $scope.laburos = [];
     $scope.hideForm = true;
 
@@ -61,6 +61,11 @@ app.controller("DatosLaborales", function($scope){
         $scope.laburos.push($scope.new_laburo);
         // Nos limpia la variable del scope new_laburo
         $scope.new_laburo = {};
+    }
+
+    $scope.deleteLaburo = function(index) {
+        $scope.laburos[index] = {};
+        $('.del-button').eq(0).addClass('ng-hide');
     }
 });
 
