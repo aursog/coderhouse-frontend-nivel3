@@ -51,8 +51,9 @@ app.controller("DatosPersonales", function($scope, $log){
  */
 app.controller("DatosLaborales", function($scope, $log){
     $scope.laburos = [
-        {anio: 2011, cargo: 'ingeniero', empresa: 'Napsis'},
-        {anio: 2009, cargo: 'contador', empresa: 'Banco'}
+        {anio: 2001, cargo: 'ingeniero', empresa: 'Napsis'}, // 0
+        {anio: 2009, cargo: 'contador', empresa: 'Banco'}, // 1
+        {anio: 2005, cargo: 'astronauta', empresa: 'NASA'} // 2
     ];
     $scope.hideForm = true;
 
@@ -66,9 +67,13 @@ app.controller("DatosLaborales", function($scope, $log){
         $scope.new_laburo = {};
     }
 
-    $scope.deleteLaburo = function(index) {
-        $log.debug($scope.laburos[index]);
-        //$scope.laburos[index] = {};
+    $scope.deleteLaburo = function(anio) {
+        $scope.laburos.forEach(function(value, index) {
+           if (value.anio == anio) {
+               $scope.laburos[index] = {};
+               return;
+           }
+        });
     }
 });
 

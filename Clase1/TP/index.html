@@ -67,16 +67,14 @@
                     </div>
                 </div>
 
-                <div id="datosLaboresCaja" ng-repeat="(key, laburo) in laburos" ng-animate="'animate'">
-                    <span> Key: {{$index}} </span>
-                    <span> contenido {{laburo}}</span>
+                <div id="datosLaboresCaja" ng-repeat="(value, laburo) in laburos | orderBy : 'cargo' : false">
                     <div class="row">
                         <div class="col-md-3" class="anio">{{laburo.anio}}</div>
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-4" class="cargo">{{laburo.cargo}}</div>
                         <div class="col-md-3" class="empresa">{{laburo.empresa}}</div>
                         <div class="col-md-1" class="action">
-                            <button type="button" class="btn btn-small del-button" ng-click="deleteLaburo($index)">
+                            <button type="button" class="btn btn-small del-button" ng-click="deleteLaburo(laburo.anio)">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                         </div>

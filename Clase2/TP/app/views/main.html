@@ -1,0 +1,44 @@
+<div class="col-md-12">
+  <div class="row">
+
+    <div class="col-md-6 tarjeta" ng-repeat="alumno in alumnos track by $index">
+      <div class="row">
+        <div class="col-md-4">Nombre: </div>
+        <div class="col-md-8">{{alumno.nombre + " " + alumno.apellido}}</div>
+        <div class="col-md-4">Edad: </div>
+        <div class="col-md-8">{{alumno.edad}}</div>
+        <div class="col-md-4">Notas: </div>
+        <div class="col-md-8">{{alumno.notas}}</div>
+        <div class="col-md-4">Promedio: </div>
+        <div class="col-md-8">{{alumno.promedio}}</div>
+
+        <div class="col-md-12 ng-hide form-nota">
+          <input type="text" name="nota_alumno" ng-model="alumno.nota_alumno" />
+          <button type="button" class="btn btn-success btn-sm" ng-click="saveNotaAlumno($index)">
+            <i class="glyphicon glyphicon-save"></i>
+          </button>
+        </div>
+
+        <div class="col-md-12">&nbsp;</div>
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" class="btn btn-danger" ng-click="deleteCard($index)">
+                <i class="glyphicon glyphicon-remove"> Eliminar</i>
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary" ng-click="addNota($index)">
+                <i class="glyphicon glyphicon-book"> Nuevo</i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">&nbsp;</div>
+      </div>
+    </div>
+
+  </div>
+</div>
