@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de $apply</title>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+    <script type="text/javascript">
+        angular.module("myModule", []).controller("FirstController", function($scope){
+            $scope.nombre = "Anggelo";
+
+            /*setTimeout(function() {
+                $scope.$apply(function() {
+                    $scope.nombre = "Felipe";
+                });
+            }, 2000);*/
+
+            $scope.cambiarNombre = function() {
+              $scope.nombre = "Juan Daniel";
+            };
+
+            /*document.querySelector('#change').addEventListener("click", function(){
+                /!*$scope.nombre = "Juan Daniel";
+                console.log($scope.nombre);
+                $scope.$apply();*!/
+                $scope.$apply(function() {
+                    $scope.nombre = "Juan Daniel";
+                });
+            });*/
+
+            /*setTimeout(function() {
+                // $scope.nombre = "Juan Daniel";
+                // console.log($scope.nombre);
+                // $scope.$apply();
+                // $scope.$apply(function() {
+                    // $scope.nombre = "Juan Daniel";
+                // });
+            });*/
+
+            /**
+             * Observa un elemento y gatilla una función cuando detecta un cambio
+             */
+            $scope.$watch(function() {
+               return $scope.nombre;
+            }, function(newValue, oldValue){
+                console.log("valor new: " + newValue);
+                console.log("valor old: " + oldValue);
+            });
+
+            /**
+             * Observa una colección (o arreglo) y gatilla función cuando se detecta un cambio dentro de
+             * la colección
+             */
+            /*$scope.$watchCollection("arreglo", function(newValue, oldValue) {
+
+            });*/
+
+            /*
+            param1: valor a observar
+            param2: accion a realizar cuando cambia el valor
+            $scope.$watch(function(){}, function(newValue, oldValue){});
+
+            param1: nombre de la coleccion
+            param2: accion a realizar cuando cambia un valor
+            $scope.$watchCollection('<nombre_coleccion>', function(newvalue, oldvalue){});
+             */
+        });
+    </script>
+</head>
+<body ng-controller="FirstController">
+    <h1>{{nombre}}</h1>
+
+    <button type="button" ng-click="cambiarNombre()">Cambiar nombre</button>
+</body>
+</html>

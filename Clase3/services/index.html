@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de $apply</title>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="serviceModule2.js"></script>
+
+    <script type="text/javascript">
+        var app = angular.module("myModule", ["moduleService"]);
+
+        app.service("firstLetter", function() {
+           this.getFirstLetter = function(value) {
+               return value[0];
+           }
+        });
+
+        app.controller("FirstController", function($scope, lowerToUpperService, firstLetter){
+            $scope.nombre = lowerToUpperService.firstToUpper("ANGGELO");
+            $scope.letra_nombre = firstLetter.getFirstLetter($scope.nombre);
+        });
+    </script>
+</head>
+<body ng-controller="FirstController">
+    <h1>{{nombre}}</h1>
+    <h2>{{letra_nombre}}</h2>
+</body>
+</html>

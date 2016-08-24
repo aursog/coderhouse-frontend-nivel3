@@ -1,0 +1,24 @@
+<div class="row marketing">
+  <span>Valor hexadecimal: {{255 | toUpperHexa}}</span>
+
+  <ul ng-repeat="task in tasks">
+    <li>{{task.nombre | lowercase | uppercase |limitTo: 3}} - {{task.fecha |date: "dd MMMM yyyy HH:mm:ss"}} {{task.nombre}}</li>
+  </ul>
+
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="nombre_tarea" ng-model="new_task.nombre" />
+      </div>
+
+      <div class="col-md-4">
+        <input type="datetime-local" name="fecha_tarea" ng-model="new_task.fecha" />
+      </div>
+
+      <div class="col-md-4 text-right">
+        <button type="button" ng-click="saveTarea()">Guardar tarea</button>
+      </div>
+    </div>
+  </div>
+</div>
