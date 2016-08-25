@@ -11,6 +11,8 @@
 app.controller('MainCtrl', ["$scope", "listaProductos", "$log",
   function ($scope, listaProductos, $log) {
     $scope.productos = listaProductos.getProductos();
+    $scope.lastProductId = listaProductos.getLastId();
+    $scope.new_product = {nombre: "", stock: 0, price: 0, id: 0};
 
     $scope.columnOrder = function(column) {
       if ($scope.order == column) {
@@ -29,5 +31,11 @@ app.controller('MainCtrl', ["$scope", "listaProductos", "$log",
           return
         }
       });
+    }
+
+    $scope.saveProduct = function() {
+      $scope.new_product.id = $scope.lastProductId + 1;
+      $scope.productos.push($scope.new_product);
+      $scope.new_product = {nombre: "", stock: 0, price: 0, id: 0};
     }
 }]);
