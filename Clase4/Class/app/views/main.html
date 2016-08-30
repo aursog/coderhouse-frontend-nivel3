@@ -1,0 +1,64 @@
+<div header-table-image="{{urlimage}}"></div>
+
+<div class="row marketing">
+  <div class="col-md-12">
+    <div class="row botonera">
+      <div class="col-xs-12 text-right">
+        <button type="button" data-toggle="modal" data-target="#myModal">
+          <i class="glyphicon glyphicon-save"></i>
+          Agregar nuevo producto
+        </button>
+      </div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+
+    <!-- Header de la tabla -->
+    <!-- directive: header-tabla -->
+    <div class="row headerTable">
+      <div class="col-md-2 col-xs-2 text-center pointer" ng-click="columnOrder('id')"><b>Id</b></div>
+      <div class="col-md-4 col-xs-4 text-center pointer" ng-click="columnOrder('nombre')"><b>Nombre producto</b></div>
+      <div class="col-md-2 col-xs-2 text-center pointer" ng-click="columnOrder('stock')"><b>Stock</b></div>
+      <div class="col-md-2 col-xs-2 text-center pointer" ng-click="columnOrder('price')"><b>Precio</b></div>
+      <div class="col-md-2 col-xs-2 text-center"><b>Acci&oacute;n</b></div>
+    </div>
+
+    <!-- Filters de la tabla-->
+    <div class="row filtersSection">
+      <div class="col-md-2 col-xs-2 text-center">
+        <input type="text" class="col-xs-12" name="filterId" ng-model="filterId" />
+      </div>
+      <div class="col-md-4 col-xs-4 text-center">
+        <input type="text" class="col-xs-12" name="filterName" ng-model="filterName" />
+      </div>
+      <div class="col-md-2 col-xs-2 text-center">
+        <input type="text" class="col-xs-12" name="filterStock" ng-model="filterStock" />
+      </div>
+      <div class="col-md-2 col-xs-2 text-center">
+        <input type="text" class="col-xs-12" name="filterPrice" ng-model="filterPrice" />
+      </div>
+      <div class="col-md-2 col-xs-2 text-center">&nbsp;</div>
+    </div>
+
+    <!-- Elements de la tabla -->
+    <div class="row productList" ng-repeat="producto in productos| orderBy:order : asc | filter: {id: filterId, nombre: filterName, stock: filterStock, price: filterPrice}">
+      <div class="col-md-2 col-xs-2 text-center">{{producto.id}}</div>
+      <div class="col-md-4 col-xs-4 text-center">{{producto.nombre}}</div>
+      <div class="col-md-2 col-xs-2 text-center">{{producto.stock | number | commaToPoint}}</div>
+      <div class="col-md-2 col-xs-2 text-center">{{producto.price | currency:'US$' | commaToPoint}}</div>
+      <div class="col-md-2 col-xs-2 text-center">
+        <div class="row botoneraTable">
+          <div class="col-xs-6">
+            <button type="button" ng-click="deleteProducto(producto.id)" class="btn btn-danger btn-sm">
+              <i class="glyphicon glyphicon-remove-sign"></i>
+            </button>
+          </div>
+          <div class="col-xs-6">
+            <!-- <editar-element prod="producto"></editar-element> -->
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<modal-create-producto></modal-create-producto>

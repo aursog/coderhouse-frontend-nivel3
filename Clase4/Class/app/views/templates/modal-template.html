@@ -1,0 +1,36 @@
+<!-- Generacion modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-4">Nombre producto</div>
+              <div class="col-xs-8">
+                <input type="text" name="nameProduct" ng-model="new_product.nombre" />
+              </div>
+              <div class="col-xs-4">Stock</div>
+              <div class="col-xs-8">
+                <input type="number" name="stockProduct" ng-model="new_product.stock" />
+              </div>
+              <div class="col-xs-4">Precio</div>
+              <div class="col-xs-8">
+                <input type="number" name="priceProduct" ng-model="new_product.price" />
+                <input type="hidden" name="idProd" ng-model="new_product.id" value="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveProduct()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
