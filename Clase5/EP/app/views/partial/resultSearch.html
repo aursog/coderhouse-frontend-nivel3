@@ -1,0 +1,11 @@
+<div ng-if="resultSearch.length > 1">
+  <ul ng-repeat="resultado in resultSearch">
+    <li ng-if="resultado.score < 0.1">
+      {{resultado.item.sku}} - {{resultado.item.nombre}}
+      &nbsp;
+      <button class="btn btn-success btn-sm" ng-click="addToList(resultado.item)">
+        <i class="glyphicon glyphicon-check"></i>
+      </button>
+    </li>
+  </ul>
+</div>
