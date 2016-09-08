@@ -8,10 +8,11 @@
  * Controller of the tp6App
  */
 angular.module('tp6App')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', [
+    "$http", "$scope", "$log", "serviceProduct",
+    function ($http, $scope, $log, serviceProduct) {
+      serviceProduct.getProducts()
+        .then(function(response){
+          $scope.products = response.results;
+        });
+  }]);
