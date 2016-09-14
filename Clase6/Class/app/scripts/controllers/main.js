@@ -45,13 +45,6 @@ angular.module('class6App').controller('MainCtrl', [
       $scope.valor2 = response;
     });
 
-    // Similar a lo que está más abajo
-    function lala() {
-      return $.ajax({});
-    }
-
-    lala().success(function() {});
-
     $http.post($scope.resource.url + 'posts', objData).then(function(response){
       $scope.posts.push(response.data);
     }, function(response){

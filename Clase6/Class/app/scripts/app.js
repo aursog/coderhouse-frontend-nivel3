@@ -8,4 +8,4 @@
  *
  * Main module of the application.
  */
-angular.module('class6App', []);
+angular.module('class6App', ['ui.router']);

@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <h3>Formulario productos</h3>
+  <hr/>
+  <div class="row">
+    <div class="col-md-3">SKU</div>
+    <div class="col-md-9">
+      <input type="text" name="skuProducto" ng-model="producto.sku" />
+    </div>
+    <div class="col-md-3">Nombre</div>
+    <div class="col-md-9">
+      <input type="text" name="nombreProducto" ng-model="producto.nombre" />
+    </div>
+    <div class="col-md-3">Precio</div>
+    <div class="col-md-9">
+      <input type="text" name="precioProducto" ng-model="producto.price" />
+    </div>
+
+    <div class="col-md-12" id="pesoCapa" ng-hide="!productoClase1">
+      <div class="row">
+        <div class="col-md-3">Peso</div>
+        <div class="col-md-9">
+          <input type="text" name="pesoProducto" ng-model="producto.peso" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12" id="largoCapa" ng-hide="productoClase1">
+      <div class="row">
+        <div class="col-md-3">Largo</div>
+        <div class="col-md-9">
+          <input type="text" name="largoProducto" ng-model="producto.largo" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-offset-6"></div>
+      <div class="col-md-6">
+        <a ui-sref="home" type="button" class="btn btn-primary">
+          <i class="glyphicon glyphicon-save"></i> Guardar cambios
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

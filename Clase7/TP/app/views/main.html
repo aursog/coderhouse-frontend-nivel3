@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <table id="tablaVenta">
+    <thead>
+      <tr>
+        <th>SKU</th>
+        <th>Nombre</th>
+        <th>Precio unitario</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="producto in productos">
+        <td>{{producto.sku}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.price}}</td>
+        <td>{{producto.tipo}}</td>
+        <td>
+          &nbsp;
+          <a ng-href="#/editar/{{producto.id}}" type="button" class="btn btn-primary btn-sm">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
