@@ -89,20 +89,3 @@ body {
     border-bottom: 0;
   }
 }
-
-#listaProductos {
-  width: 110%;
-}
-
-#listaProductos tr th {
-  text-align: center;
-  padding: 10px;
-  background-color: #1b6d85;
-  font-weight: bold;
-  color: white;
-}
-
-#listaProductos tr th, #listaProductos tr td {
-  border: 1px solid black;
-  padding: 5px;
-}

@@ -14,22 +14,33 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="ejePrac03App">
+  <body ng-app="workshop01App">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ng-controller="MenuCtrl">
+    <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="home">Ejercicio pr&aacute;ctico 2</a>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">workshop01</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul class="nav navbar-nav" ng-repeat="menu in listaMenu">
-              <li><a ng-href="{{menu.url}}" title="{{menu.title}}">{{menu.name | accentsToHtml}}</a></li>
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/">About</a></li>
+              <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -37,7 +48,7 @@
     </div>
 
     <div class="container">
-      <div ui-view></div>
+    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
     </div>
 
     <div class="footer">
@@ -66,36 +77,9 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/config.js"></script>
-
-        <!-- begin factory section -->
-        <script src="scripts/factories/makerResourceUrl.js"></script>
-        <!-- end factory section -->
-
-        <!-- begin directive section -->
-        <script src="scripts/directives/selectedPage.js"></script>
-        <!-- end directive section -->
-
-        <!-- begin filters section -->
-        <script src="scripts/filters/accentsToHtml.js"></script>
-        <script src="scripts/filters/myCurrency.js"></script>
-        <script src="scripts/filters/listingType.js"></script>
-        <!-- end filters section -->
-
-        <!-- begin services section -->
-        <script src="scripts/services/categorias.js"></script>
-        <script src="scripts/services/menu.js"></script>
-        <!-- end services section -->
-
-        <!-- begin controller section -->
-        <script src="scripts/controllers/menu.js"></script>
-        <script src="scripts/controllers/homeCategories.js"></script>
-        <script src="scripts/controllers/tableCategories.js"></script>
-        <!-- end controller section -->
+        <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -2,10 +2,11 @@
 
 /**
  * @ngdoc overview
- * @name ejePrac03App
+ * @name workshop01App
  * @description
- * # ejePrac03App
+ * # workshop01App
  *
  * Main module of the application.
  */
-angular.module('ejePrac03App', ['ui.router']);
+angular
+  .module('workshop01App', []);

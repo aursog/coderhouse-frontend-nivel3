@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name ejePrac03App.controller:MainCtrl
+ * @name workshop01App.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the ejePrac03App
+ * Controller of the workshop01App
  */
-angular.module('ejePrac03App')
+angular.module('workshop01App')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

@@ -1,0 +1,44 @@
+<table id="listaProductos">
+  <thead>
+    <tr>
+      <th>Art&iacute;culo</th>
+      <th>Precio</th>
+      <th>Tipo</th>
+      <th>MercadoPago</th>
+      <th>Stock</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="articulo in listaArticulos">
+      <td>{{articulo.title}}</td>
+      <td>{{articulo.price | myCurrency : articulo.currency_id}}</td>
+      <td>{{articulo.listing_type_id | listingType }}</td>
+      <td>{{articulo.accepts_mercadopago ? "S&iacute;" : "No"}}</td>
+      <td>{{articulo.available_quantity}}</td>
+      <td>{{articulo.condition == "new" ? "Nuevo" : "Usado"}}</td>
+      <td nowrap="true">
+        <a ng-href="#/product/{{articulo.id}}" class="btn btn-success btn-sm">
+          <i class="glyphicon glyphicon-eye-open"></i>
+        </a>
+        <a ng-href="{{articulo.permalink}}" class="btn btn-primary btn-sm" target="_blank">
+          <i class="glyphicon glyphicon-new-window"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="7" class="text-right">
+        <span ng-repeat="i in totalPage() track by $index">
+          <a title="{{$index + 1}}" class="btn btn-sm btn-default paginator" selected-page="{{$index}}" ng-click="cambiaPagina($index)">
+            {{$index + 1}}
+          </a>
+        </span>
+      </td>
+    </tr>
+  </tfoot>
+</table>
