@@ -11,7 +11,7 @@ angular.module('ejePrac03App').controller('TableCategoriesCtrl', [
       return new Array(4);
     };
 
-    var promise = $http.get($stateParams.idCategory, {
+    var promise = $http.get("https://api.mercadolibre.com/sites/MLU/search?category=" + $stateParams.idCategory, {
       params: {
         "limit": 15,
         "offset": $scope.offset
