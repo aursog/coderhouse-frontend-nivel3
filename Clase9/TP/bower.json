@@ -1,0 +1,14 @@
+{
+  "name": "trabajo_practico",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/aursog/coderhouse",
+  "dependencies": {
+    "angular-ui-router": "ui-router#^0.3.1",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "firebase": "^3.4.1",
+    "angularfire": "^2.0.2"
+  }
+}

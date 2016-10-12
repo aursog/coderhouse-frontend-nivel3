@@ -1,0 +1,25 @@
+{
+  "name": "clase1",
+  "version": "1.0.0",
+  "description": "Esta corresponde a la primera clase de AngularJS para el curso de Frontend nivel 3 de Coderhouse",
+  "main": "angular.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aursog/Coderhouse/Clase1/Class"
+  },
+  "keywords": [
+    "clase1",
+    "angularjs",
+    "frontend",
+    "coderhouse"
+  ],
+  "author": "Anggelo Urso",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}

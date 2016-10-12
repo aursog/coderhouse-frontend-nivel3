@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo</title>
+</head>
+<body>
+
+    <form method="post" id="form-login" action="inter.html">
+        <legend>Logeo</legend>
+        <input type="text" name="email" id="email" /> <input type="password" name="passwd" id="passwd" />
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC-RwXy-UHmzt9nGsG9bdBRhOozp4fRxNQ",
+            authDomain: "class8-coderhouse.firebaseapp.com",
+            databaseURL: "https://class8-coderhouse.firebaseio.com",
+            storageBucket: "class8-coderhouse.appspot.com",
+            messagingSenderId: "898776885314"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

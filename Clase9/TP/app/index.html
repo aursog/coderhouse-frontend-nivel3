@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicaci&oacute;n chat Firebase + AngularJS</title>
+
+    <link rel="stylesheet" href="library/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.min.css" />
+</head>
+<body ng-app="chatFirebase">
+    <br />
+
+    <div class="container" ng-controller="HomeCtrl">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3 text-center">
+                <div class="row">
+                    <div class="col-md-4">Usuario</div>
+                    <div class="col-md-8"><input type="text" class="form-control" name="username" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- angular components -->
+    <script src="minjs/main.min.js"></script>
+
+    <script src="lib/firebase.js"></script>
+    <script src="lib/angularfire.min.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC-RwXy-UHmzt9nGsG9bdBRhOozp4fRxNQ",
+            authDomain: "class8-coderhouse.firebaseapp.com",
+            databaseURL: "https://class8-coderhouse.firebaseio.com",
+            storageBucket: "class8-coderhouse.appspot.com",
+            messagingSenderId: "898776885314"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+</html>

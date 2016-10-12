@@ -7,6 +7,7 @@ var app = angular.module("clase1", []);
 app.controller("ControladorUno", function($scope) {
     $scope.nombre = "Ariel";
     $scope.condicion = false;
+    $scope.pba = "lala";
 
     $scope.apagaEtiqueta = function() {
         var elem = document.getElementById("otraShow");

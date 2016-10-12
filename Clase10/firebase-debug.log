@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /Users/aurso/.nvm/versions/node/v6.5.0/bin/node /Users/aurso/.nvm/versions/node/v6.5.0/bin/firebase serve
+[debug] CLI Version:  3.0.8
+[debug] Platform:     darwin
+[debug] Node Version: v6.5.0
+[debug] Time:         Tue Oct 11 2016 20:28:07 GMT-0300 (CLST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /Users/aurso/Desktop/workspace/pessoais/Coderhouse/Clase10
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
